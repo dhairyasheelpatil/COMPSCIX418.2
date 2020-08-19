@@ -20,3 +20,6 @@ We have ten sessions, each week will go through the design principles along with
 
 ### Contact Me
  sahar.mostafa@berkeley.edu
+
+## Links
+https://extension.berkeley.edu/search/publicCourseSearchDetails.do?method=load&courseId=59723906
