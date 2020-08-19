@@ -19,4 +19,4 @@ When students have completed this course, they will learn to:
 We have ten sessions, each week will go through the design principles along with an in class exercise.
 
 ### Contact Me
- 
+ sahar.mostafa@berkeley.edu
