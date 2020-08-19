@@ -3,7 +3,7 @@
 Welcome!
 
 ## Intent
-To help developers improve theri software programming skills.  This class offers a comprehensive overview of object oriented design fundamentals,  best practices for building software using design patterns and a deep dive into service oriented architecture. Through exercises and collaborative activities, students will learn how to implement well structured software solutions and microservices. 
+To help developers improve their software programming skills.  This class offers a comprehensive overview of object oriented design fundamentals,  best practices for building software using design patterns and a deep dive into service oriented architecture. Through exercises and collaborative activities, students will learn how to implement well structured software solutions and microservices. 
 
 ## Course Learning Objectives
 
