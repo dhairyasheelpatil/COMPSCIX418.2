@@ -3,11 +3,11 @@ package refactor;
 import java.util.List;
 
 // Inheritance should be used here. This will avoid repeated code and make
-// the code more readable. UserRegistration should be an abstract class
-// and PCRegistration and MacBookRegistration should extend UserRegistration.
+// the code more readable. UserRegistration should be the super class and
+// PCRegistration and MacBookRegistration should extend UserRegistration.
 // Method purchase() can be a common method in the super class because it is
-// the same behavior in PCRegistration and MacBookRegistration. The same applys
-// to receipt() method. PCRegistation and MacBookRegistration both have the method
+// the same behavior in PCRegistration and MacBookRegistration. The same apply
+// to receipt() method. PCRegistration and MacBookRegistration both have the method
 // getPrice(). This can be a common method in the super class as well.
 
 public class UserRegistration {
