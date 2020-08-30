@@ -1,8 +1,6 @@
 # Session Two
 
-In this session you will learn more about the basic concepts behind Object Oriented Programming.
-We will discuss UML class diagram notation.
-
+In this session you will review session one, discuss reusability and refactoring.
 
 ## Exercise One
 
