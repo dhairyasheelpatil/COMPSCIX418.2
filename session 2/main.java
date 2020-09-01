@@ -1,14 +1,14 @@
-
+// recursion
 class Timer {
 
 	public void countDown(int counter) {
 		if (counter == 0)
 			return;
-		
 		countDown(counter--);
 	}
 }
 
+// delegation
 class VicePresidentOfSales {
   public:
   	 void increaseQuarterlySales();
@@ -33,7 +33,7 @@ class Painter {
       self.theCar = car
    }
 }
-
+// redirection
 class PaintShopManager {
    var theCar: Car
    paintCar(car: Car) {
@@ -41,6 +41,8 @@ class PaintShopManager {
    }
 }
 
+
+// conglomeration
 class Timer {
 	void ring();
 

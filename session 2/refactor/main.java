@@ -75,4 +75,4 @@ public class MacBookRegistration {
 	public double getPrice() {
 		return _price;
 	}
-}
+} ` `
