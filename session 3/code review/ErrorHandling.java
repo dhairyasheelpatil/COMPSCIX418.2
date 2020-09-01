@@ -1,7 +1,7 @@
 public class ClientController {
 
      public int validateOrder(Order order) {
-      //  check if order is valid
+      // check if order is valid
       // validate order quantity and price
        OrderState orderState = getOrderState(order.item);
        if (orderState == VALID) {
