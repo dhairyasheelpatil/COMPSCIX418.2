@@ -1,0 +1,24 @@
+Pattern used: Decorator Design Pattern
+
+1. MainCar is the key class which would be abstract in nature:
+
+public interface MainCar {
+
+	public void assembleCar();
+}
+
+A simple type of car would extend the car. 
+
+
+2. DecorateCar would help us implement the component interface.
+
+3. assembleCar() would be a inherited function extended by these classes
+
+
+Advantages of this approach:
+- Easy to maintain overall set of new components such as trimness or finishes
+
+Disadvantages:
+
+- We could end up creating too many similar objects 
+- Complexity may increase while trying to scale
