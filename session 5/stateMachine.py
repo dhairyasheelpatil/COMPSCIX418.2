@@ -30,7 +30,7 @@ class Connect(State):
 
     def next(self, input):
         if input == TCPAction.Connect:
-            return MouseTrap.Closed
+            return TCPAction.Closed
         if input == TCPAction.Closed:
             return TCPAction.Terminal
         return TCPAction.Connect
