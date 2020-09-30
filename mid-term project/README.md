@@ -5,7 +5,7 @@ As such, you will not be graded on the specifics of your design; rather, you wil
 
 # Deadline
 
-Week 8
+Week 8 - 10/12
 
 ## Problem description
 You are hired to design an invitation RSVP system for different types of events. Since you are the expert on software architecture design, you want to design a generic system.
