@@ -3,6 +3,10 @@
 The objective of this exercise is to utilize some of the design patterns you learnt so far and to prepare you for further discussion that we will have in class. 
 As such, you will not be graded on the specifics of your design; rather, you will receive full credit if your system supports all the required classes, operations and the code follows OOP principles and design patterns.
 
+# Deadline
+
+Week 8 - 10/12
+
 ## Problem description
 You are hired to design an invitation RSVP system for different types of events. Since you are the expert on software architecture design, you want to design a generic system.
 Apply the design patterns you learnt in class as you see fitting.
