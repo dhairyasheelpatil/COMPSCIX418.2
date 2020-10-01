@@ -1,17 +1,47 @@
-class ShoppingCart {
-  public static ShoppingCart* Instance();
-  private ShoppingCart();
-  private static ShoppingCart* _instance;
-};
+public class AccountManagerSigleton {
+    private static AccountManagerSigleton instance = null;
+    private static User[] userList;
+    private MySingleton() {
 
-ShoppingCart* Shoppingcart::_instance = NULL;
+    }
+    // performance issues with the synchronized keyword
+    public static synchronized AccountManagerSigleton getInstance() {
+        if (instance == null) {
+            instance = new AccountManagerSigleton();
+        }
+        return instance;
+    }
 
-ShoppingCart* ShoppingCart::getInstance() {
-  if (_instance = NULL) {
-    _instance = new ShoppingCart();
-  }
-  return _instance;
+    public void createUser(String userName) {
+        user = new User(userName);
+        userList.push(user);
+    }
+
+    public void deleteUser(String userName) {
+        userList(userName) = null
+    }
+
+    public User[] getAccountList() {
+      return userList;
+    }
 }
+
+public class User {
+    private String userName;
+    private ShoppingCart shoppingCart;
+  
+    public User(String userName) {
+      this.userName = userName;
+      this.shoppingCart = new ShoppingCart();
+    }
+  
+    public ShoppingCart getShoppingChart()
+    {
+      return this.shoppingCart;
+    }
+
+}
+
 
 class Item(object) {
   private String category;
@@ -65,10 +95,8 @@ class Electronics(Item) extends Item {
   }
 }
 
-public class ShoppingCart {
-  private static final ShoppingCart instance = new ShoppingCart();
+class ShoppingCart {
   private List<Item> myCart = new ArrayList<Item>();
-  private ShoppingCart() {}
 
   public static void addItem(Item){
     for (int counter = 0; counter < myCart.size(); counter++) {
