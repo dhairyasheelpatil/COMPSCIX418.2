@@ -1,3 +1,5 @@
+//[SM] for the vending machine each state should implement the same interface, this way the interface decalres a clear contract
+// as opposed to creating a fat VendingMachineState class with all the possible collections of behaviors of all the states
 class VendingMachine {
 public:
   void CollectMoney(int money)

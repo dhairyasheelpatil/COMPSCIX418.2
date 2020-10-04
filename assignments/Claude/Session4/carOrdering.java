@@ -1,3 +1,5 @@
+//[SM] this is great, this is the correct implementation of the decorator class
+// defining a default behavior inside the carBase class is well thought
 public interface Car {
   String getCar();
 };
