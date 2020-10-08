@@ -1,3 +1,6 @@
+// [SM] no need to have multiple observers, one observer list is enough
+// the observer can then observe or wait on different registartion event types
+// need also an unregister observer, in case the obsewrver does not need to be notified any more
 public class Event {
   private List<Observer> observers = new ArrayList<Observer>();
   private List<Observer> registrations = new ArrayList<Observer>();

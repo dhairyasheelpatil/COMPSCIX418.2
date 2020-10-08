@@ -1,3 +1,6 @@
+
+// [SM] nice usage of the interface, but remember the adaptor pattern is a class conforming the behavior of two interfaces
+// we discussed the solution in class.  
 interface DateAdapter {
   string getDate();
   string getFileType();
