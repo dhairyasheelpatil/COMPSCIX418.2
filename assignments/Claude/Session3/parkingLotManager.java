@@ -1,3 +1,4 @@
+// [SM] nice usage of enumeration, oneidea is you can combine both enumerations and use internal variables and the enum can have a constructor
 public enum VehicleType {
   CAR, VAN, TRUCK, MOTORCYCLE
 }
@@ -19,6 +20,7 @@ public abstract class ParkingSpot {
   }
 
   public boolean assignVehicle(Vehicle vehicle) {
+    // [SM] can we check if the vehicle size can fit into the size of the parking spot?
     this.vehicle = vehicle;
     free = false;
   }
@@ -132,6 +134,7 @@ public class ParkingLotSigleton {
     return instance;
   }
 
+// [SM] I like the logic behind this function, but it has some repeated logic, perhaps move this logic to each vehicle type class
   public boolean isFull(VehicleType type) {
     // trucks and Bus can only be parked in LargeSpot
     if (type == VehicleType.Truck || type == VehicleType.VAN) {
@@ -149,6 +152,7 @@ public class ParkingLotSigleton {
     }
   }
 
+  // [SM] is this function used to free spots? if so, maybe rename the function to declare its intention 
   // increment the parking spot count based on the vehicle type
   private boolean incrementSpotCount(VehicleType type) {
     if (type == VehicleType.Truck || type == VehicleType.Van) {
@@ -172,6 +176,5 @@ public class ParkingLotSigleton {
     }
     return true;
   }
-
 
 }
