@@ -78,13 +78,33 @@ class rsvp {
         } 
         void sendRSVP() {
             for(Event event: events) {
-                System.out.print("Event RSVP for: " + event.getEventDesciption() + "\n" +
+                System.out.print("\nEvent RSVP for: " + event.getEventDesciption() + "\n" +
                                 "Location: " + event.getEventVenue() + "\n" +
                                 "Date: " + event.getEventDate() + "\n" +
                                 "Time: " + event.getEventTime() + "\n");
                 event.sendEventRSVP();
                 
             }
+        }
+
+        void RSVPstats() {
+            for(Event event: events) {
+                event.getRSVPStats();
+                
+            }
+        }
+
+        void eventTypeCounter() {
+            HashMap<String, Integer> eventTypeCountMap = new HashMap<String, Integer>();
+            for (EventTypes eventType : EventTypes.values()) { 
+                eventTypeCountMap.put(eventType.toString(), 0);
+            }
+            for(Event event: events) {
+                eventTypeCountMap.put(event.getEventType(), eventTypeCountMap.get(event.getEventType()) + 1);
+            }
+            for (Map.Entry entry : eventTypeCountMap.entrySet()) { 
+                System.out.println(entry.getKey() + " " + entry.getValue()); 
+            } 
         }
     }
 
@@ -200,15 +220,36 @@ class rsvp {
             }
         }
         public void sendEventRSVP(){
+            int counter = 0;
             for(Guest guest: guests) {
                 if (guest.getRSVP() == null) {
+                    counter++;
                     guest.sendGuestRSVP(getInvatation());
                 }
             }
+            System.out.println("\n --- Number of Invites send out: " + counter + " ---");
         }
 
         void getHostInfo() {
             System.out.println(this.host.getName() + " is (" + this.desciption + ") this event's host.\nReachable at " + this.host.getEmail());
+        }
+
+        void getRSVPStats() {
+            int noResponse = 0;
+            int yesRSVP = 0;
+            int noRSVP = 0;
+            for(Guest guest: guests) {
+                if (guest.getRSVP() == null) {
+                    noResponse++;
+                }
+                else if (guest.getRSVP() == "Yes") {
+                    yesRSVP++;
+                }
+                else {
+                    noRSVP++;
+                }
+            }
+            System.out.println("\n --- RSVP Statistics for " + this.desciption + " --- \nNo Response: " + noResponse + "\nRSVP Yes: " + yesRSVP + "\nRSVP No: " + noRSVP);
         }
     }
 
@@ -220,13 +261,24 @@ class rsvp {
         myEvent.addGuest(new Guest("Grace Phan", "grace.phan@gmail.com"));
         notifier.register(myEvent);
 
-        System.out.println("-- Sending out RSVP Invatations ---");
+        System.out.println("\n-- Sending out RSVP Invatations ---");
         notifier.sendRSVP();
         
         System.out.println("\nGuest Accepted");
         myEvent.getGuestList().get(0).guestRSVPYes(myEvent);
 
+        Event myEvent2 = new Event("MyGrad","Grand Park","1/25/2020","5pm","www.gradparty.com",10,EventTypes.Graduation, new Guest("Amanda Huang", "amanda.huang@gmail.com"));
+        myEvent2.addGuest(new Guest("Jon Kim", "jon.kim@gmail.com"));
+        myEvent2.addGuest(new Guest("Josh Hyunh", "josh.hyunh@gmail.com"));
+        notifier.register(myEvent2);
+
         System.out.println("\n-- Sending out RSVP Invatations ---");
         notifier.sendRSVP();
+
+        System.out.println("\n-- All EventType Stats ---");
+        notifier.eventTypeCounter();
+
+        System.out.println("\n-- All RSVP per Event Stats ---");
+        notifier.RSVPstats();
     }
 }
