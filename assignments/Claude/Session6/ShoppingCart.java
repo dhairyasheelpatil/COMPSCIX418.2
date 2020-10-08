@@ -18,7 +18,11 @@ public class AccountManagerSigleton {
     }
 
     public void deleteUser(String userName) {
-        userList(userName) = null
+        for(User i : userList) {
+            if (i.getUserName() == userName) {
+                i = null;
+            }
+        }
     }
 
     public User[] getAccountList() {
@@ -35,6 +39,9 @@ public class User {
       this.shoppingCart = new ShoppingCart();
     }
   
+    public String getUserName() {
+        return this.userName;
+    }
     public ShoppingCart getShoppingChart()
     {
       return this.shoppingCart;
@@ -43,7 +50,7 @@ public class User {
 }
 
 
-class Item(object) {
+public class Item(object) {
   private String category;
   private String name;
   private float price;
@@ -83,7 +90,7 @@ class Clothing(Item) extends Item {
 
 class Decor(Item) extends Item {
   public Decor {
-    this.category = 'Decor'
+    this.category = "Decor"
     this.quanity = 1
   }
 }
@@ -112,7 +119,7 @@ class ShoppingCart {
 
   public static void listCart() {
     for (int counter = 0; counter < myCart.size(); counter++) {
-          item = myCart.get(counter)
+          item = myCart.get(counter);
           System.out.println(item.getItemName() + ": " + item.getItemPrice());
     }
   }
